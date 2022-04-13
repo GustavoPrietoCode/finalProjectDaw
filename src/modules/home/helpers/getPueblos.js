@@ -21,7 +21,7 @@ const getPueblosVall = () => {
         })
         .catch( e => console.log(`Ha habido un error: ${e}`))
 
-    console.log(pueblosVall.length)
+    //console.log(pueblosVall.length)
     return pueblosVall;
 };
 

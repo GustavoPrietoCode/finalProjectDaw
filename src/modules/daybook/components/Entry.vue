@@ -1,4 +1,6 @@
 <template>
+
+  <!-- Click en la entrada... -->
   <div
     class="entry-container mb-3 pointer p-2"
     @click="$router.push({ name:'entry', params: {id:entry.id}})"
@@ -11,8 +13,12 @@
         <span class="mx-2 fw-light">{{ yearDay }}</span>
     </div>
 
+    <div class="tituloPost">
+      {{ title }}
+    </div>
+
     <div class="entry-description">
-       {{ shortTerm }}
+        {{ shortTerm }}
       </div>
   </div>
 </template>
@@ -30,6 +36,9 @@ export default {
     }
   },
   computed:  {
+    title() {
+      return this.entry.title
+    },
     shortTerm() {
       return (this.entry.text.length > 130)
       ? this.entry.text.substring(0, 130) + ' [...]'
@@ -61,6 +70,9 @@ export default {
     transition: 0.2s all ease-in;
   }
 
+  .tituloPost {
+    font-weight: bold;
+  }
   .entry-description{
     font-size: 12px;
   }
