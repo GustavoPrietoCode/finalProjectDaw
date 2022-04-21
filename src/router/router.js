@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from "vue-router";
 import NoPageFound from "@/shared/pages/NoPageFound";
 
 import daybookRouter from '../modules/daybook/router'
+import authRouter from '../modules/auth/router'
+import isAuthGuard from '@/modules/auth/router/auth-guard'
 
 const routes = [
   {
@@ -23,7 +25,12 @@ const routes = [
       import(/* webpackChunkNa "Contacto" */ "@/views/ContactoView.vue"),
   },
   {
+    path: '/auth',
+    ...authRouter
+  },
+  {
     path: "/daybook",
+    beforeEnter: [ isAuthGuard ],
     name: "Blog",
     ...daybookRouter
   },

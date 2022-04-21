@@ -80,6 +80,7 @@ import getDayMonthYear from "../helpers/getDayMonthYear";
 import uploadImage from "../helpers/uploadImage";
 
 export default {
+    name: 'EntryView',
     props: {
         id: {
             type: String,
@@ -222,7 +223,7 @@ export default {
 textarea {
     font-size: 20px;
     border: none;
-    height: 100%;
+    height: 90%;
 
     &:focus{
         outline: none;

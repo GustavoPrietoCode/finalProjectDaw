@@ -1,22 +1,12 @@
 <template>
   <div class="container-fluid bloqueFiltros p-5">
 
-    <div class="container mb-5 ">
+    <div class="container mb-5 d-flex justify-content-center">
       <h2>Ayuda a repoblar tu pueblo</h2>
     </div>
 
-    <!-- BUSCADOR -->
-      <div class="px-2 pt-2 mb-5">
-          <input 
-              type="text"
-              class="form-control"
-              placeholder="Busca el pueblo"
-              v-model="term"
-          />
-      </div>
-
     <!-- SELECT -->
-    <div class="row align-items-center">
+<!--     <div class="row align-items-center">
       <div class="col-3"></div>
       <div class="col-3">
         <select class="form-select" v-model="selectedA">
@@ -33,31 +23,41 @@
         </select>
       </div>
       <div class="col-3"></div>
-    </div>
-  
+    </div> -->
+
+
     <!-- LISTA DE ENTRADAS -->
-        <div class="entry-scrollarea mt-5">
-            <h5>Entradas</h5>
-            <Entry 
-                v-for="entry in entriesByTerm"
-                :key="entry.id"
-                :entry = "entry"
-                />
+    <div class="d-flex mt-5">
+        <div class="col">
+            <!-- <Entrylist /> -->
         </div>
+    </div>
+
+    <div class="d-flex mt-5">
+        <div class="col">
+            <EntrylistHome />
+        </div>
+    </div>
 
   </div>
+
 </template>
 
 <script>
 import { defineAsyncComponent } from 'vue'
-import { mapGetters } from "vuex";
+import { mapActions, mapState, mapGetters } from 'vuex'
 //import getPueblosOption from "@/modules/home/helpers/getPueblos";
 //console.log(getPueblosOption())
 
 export default {
   name: "BloquesFiltros",
   components: {
-        Entry: defineAsyncComponent(() => import('@/modules/daybook/components/Entry.vue'))
+        Entry: defineAsyncComponent(() => import('@/modules/daybook/components/Entry.vue')),
+        //Entrylist: defineAsyncComponent(() => import('@/modules/daybook/components/EntryList.vue')),
+        EntrylistHome: defineAsyncComponent(() => import('@/modules/daybook/components/EntryListHome.vue')),
+    },
+    methods: {
+        ...mapActions('journal', ['loadEntries']),
     },
     computed: {
         ...mapGetters ('journal', [ 'getEntriesByTerm' ]),
@@ -87,15 +87,23 @@ export default {
           { text: "Valladolid", value: "Valladolid" },
         ],
 
-      };
+      }
   },
+  created() {
+        this.loadEntries()
+    }
 };
 </script>
 
-<style>
+<style scoped>
 .bloqueFiltros {
   background-color: rgba(126, 127, 94);
   color: white;
-  height: 35vh;
+  
 }
+
+input{
+    height: 25px;
+}
+
 </style>

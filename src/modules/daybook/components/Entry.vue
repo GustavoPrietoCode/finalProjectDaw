@@ -6,17 +6,19 @@
     @click="$router.push({ name:'entry', params: {id:entry.id}})"
     >
 
-    <!-- titulo -->
+    <!-- fecha -->
     <div class="entry-title d-flex">
         <span class="text-success fs-5 fw-bold">{{ day }}</span>
         <span class="mx-1 fs-5">{{ month }}</span>
         <span class="mx-2 fw-light">{{ yearDay }}</span>
     </div>
 
+  <!-- título/ nombre pueblo -->
     <div class="tituloPost">
       {{ title }}
     </div>
 
+  <!-- resumen el post -->
     <div class="entry-description">
         {{ shortTerm }}
       </div>
@@ -54,7 +56,7 @@ export default {
     },
     yearDay(){
       const date = new Date( this.entry.date )
-      return `${ date.getFullYear() }, ${ days[date.getDay() ] } `
+      return `${ date.getFullYear() }, ${ days[date.getDay() ] }`
     }
   }
 }

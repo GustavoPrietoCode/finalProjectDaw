@@ -33,7 +33,7 @@
 
 <script>
 import { defineAsyncComponent } from 'vue'
-import { mapGetters } from "vuex";
+import { mapGetters } from 'vuex'
 
 export default {
     components: {
@@ -60,11 +60,12 @@ input{
 
 .entry-list-container{
     border-right: px solid #2c3e50;
-    height: calc(100vh - 56px);
+    height: 100vh;
+    /* height: calc(100vh - 50px); */
 }
 
 .entry-scrollarea{
-    height: calc(100vh - 110px);
+    height: calc(100vh - 310px);
     overflow: scroll;
 }
 </style>
