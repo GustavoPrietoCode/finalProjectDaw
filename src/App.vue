@@ -4,19 +4,18 @@
   <h1 v-if="authStatus === 'authenticating'">{{ authStatus }}</h1>
   <router-view v-else/>
 
-  <Footer />
 </template>
 
 <script>
 //import NavBar from "@/shared/components/NavBar";
-import { defineAsyncComponent } from 'vue'
+import { defineAsyncComponent } from 'vue';
 import useAuth from "./modules/auth/composables/useAuth";
 
 export default {
   name: 'App',
   components: {
       NavBar: defineAsyncComponent(() => import(/* webpackChunkName: "Navbar" */'./shared/components/NavBar')),
-      Footer: defineAsyncComponent(() => import(/* webpackChunkName: "Navbar" */'./shared/components/Footer')),
+      
     },
     setup() {
 

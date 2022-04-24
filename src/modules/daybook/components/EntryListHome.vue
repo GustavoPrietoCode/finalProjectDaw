@@ -15,15 +15,6 @@
         </div>
         
 
-        <!-- BOTÓN NUEVA ENTRADA -->
-        <div class="mt-2 d-flex flex-column">
-            <!-- <button class="btn btn-primary mx-3"
-            @click="$router.push({ name: 'entry', params: {id:'new'} })">
-                <i class="fa fa-plus-circle"></i>
-                Nueva entrada
-            </button> -->
-        </div>
-
         <!-- LISTA DE ENTRADAS -->
         <div class="container">
             <div class="d-flex flex-row mx-5">
@@ -35,8 +26,6 @@
                     />
             </div>
         </div>
-
-
     </div>
 </template>
 
@@ -51,7 +40,7 @@ export default {
     computed: {
         ...mapGetters ('journal', [ 'getEntriesByTerm' ]),
         entriesByTerm() {
-            return this.getEntriesByTerm( this.term ).slice(0, 4)
+            return this.getEntriesByTerm( this.term ).slice(0, 3)
         }
     },
     data () {
@@ -77,8 +66,8 @@ input{
 }
 
 .entry-scrollarea{
-    color: black;
-    width: 250px;
-    height: 300px;
+    color: #000;
+    width: auto;
+    height: auto;
 }
 </style>

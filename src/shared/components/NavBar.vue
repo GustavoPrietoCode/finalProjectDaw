@@ -13,9 +13,9 @@
         <li class="nav-item">
           <a class="nav-link" href="/mapa">Mapa</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="/contacto">Contacto</a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link" href="/auth">Blog</a>
         </li>

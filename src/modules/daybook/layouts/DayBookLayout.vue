@@ -15,12 +15,12 @@
     <div 
         v-else
         class="d-flex">
-        <div class="col-4">
-            <Entrylist />
-        </div>
-        <div class="col">
-            <router-view></router-view>
-        </div>
+            <div class="col-4">
+                <Entrylist />
+            </div>
+            <div class="col">
+                <router-view></router-view>
+            </div>
     </div>
 
 </template>
@@ -47,3 +47,9 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+
+
+
+</style>

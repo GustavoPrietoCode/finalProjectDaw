@@ -5,29 +5,30 @@
     class="entry-container mb-3 pointer p-2"
     @click="$router.push({ name:'entry', params: {id:entry.id}})"
     > -->
-  <div class="entry-container mb-3 pointer p-2">
-    <!-- fecha -->
-    <div class="entry-title d-flex">
-        <span class="text-success fs-5 fw-bold">{{ day }}</span>
-        <span class="mx-1 fs-5">{{ month }}</span>
-        <span class="mx-2 fw-light">{{ yearDay }}</span>
-    </div>
+    <div class="entry-container mb-3 pointer p-2">
+        <!-- fecha -->
+        <div class="entry-title d-flex">
+            <span class="text-success fs-5 fw-bold">{{ day }}</span>
+            <span class="mx-1 fs-5">{{ month }}</span>
+            <span class="mx-2 fw-light">{{ yearDay }}</span>
+        </div>
 
-  <!-- título/ nombre pueblo -->
-    <div class="tituloPost">
-      {{ title }}
-    </div>
+        <!-- título/ nombre pueblo -->
+        <div class="tituloPost">
+          {{ title }}
+        </div>
 
-  <!-- resumen el post -->
-    <div class="entry-description">
-        {{ shortTerm }}
-    </div>
-    <img 
+        <!-- resumen el post -->
+        <div class="entry-description mb-4">
+            {{ shortTerm }}
+        </div>
+        <img 
             v-if="entry.picture && !localImage"
             :src="entry.picture"
             alt="entry-picture"
             class="img-thumbnail">
-  </div>
+    </div>
+
 </template>
 
 <script>
@@ -40,7 +41,8 @@ export default {
     entry: {
       type: Object,
       required: true
-    }
+    },
+    localImage: null,
   },
   computed:  {
     title() {
@@ -74,6 +76,8 @@ export default {
 .entry-container{
   border-bottom: 1px solid #2c3e50;
   transition: 0.2s all ease-in;
+  width: 200px;
+  overflow: hidden;
 
   &:hover{
     background-color: lighten($color: grey, $amount: 45);
@@ -85,6 +89,10 @@ export default {
   }
   .entry-description{
     font-size: 12px;
+  }
+
+  .img-thumbnail{
+    bottom: 1px;
   }
 }
 </style>

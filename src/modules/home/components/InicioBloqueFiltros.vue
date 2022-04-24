@@ -25,17 +25,33 @@
       <div class="col-3"></div>
     </div> -->
 
-
     <!-- LISTA DE ENTRADAS -->
-    <div class="d-flex mt-5">
-        <div class="col">
-            <!-- <Entrylist /> -->
-        </div>
-    </div>
+      <div class="entry-list-container">
 
-    <div class="d-flex mt-5">
-        <div class="col">
-            <EntrylistHome />
+        <!-- BUSCADOR -->
+        <div class="container mb-5 buscador">
+            <div class="px-2 pt-2">
+                <h4>Mira lo que han dicho de tu pueblo...</h4>
+                <input 
+                    type="text"
+                    class="form-control"
+                    placeholder="Busca el pueblo"
+                    v-model="term"
+                    />
+            </div>
+        </div>
+        
+
+        <!-- LISTA DE ENTRADAS -->
+        <div class="container">
+            <div class="d-flex flex-row justify-content-center mx-5">
+                    <EntryHome
+                    class="card entry-scrollarea mx-5"
+                    v-for="entry in entriesByTerm"
+                    :key="entry.id"
+                    :entry = "entry"
+                    />
+            </div>
         </div>
     </div>
 
@@ -45,16 +61,14 @@
 
 <script>
 import { defineAsyncComponent } from 'vue'
-import { mapActions, mapState, mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 //import getPueblosOption from "@/modules/home/helpers/getPueblos";
 //console.log(getPueblosOption())
 
 export default {
   name: "BloquesFiltros",
   components: {
-        Entry: defineAsyncComponent(() => import('@/modules/daybook/components/Entry.vue')),
-        //Entrylist: defineAsyncComponent(() => import('@/modules/daybook/components/EntryList.vue')),
-        EntrylistHome: defineAsyncComponent(() => import('@/modules/daybook/components/EntryListHome.vue')),
+      EntryHome: defineAsyncComponent(() => import('@/modules/daybook/components/EntryHome.vue'))
     },
     methods: {
         ...mapActions('journal', ['loadEntries']),
@@ -62,7 +76,7 @@ export default {
     computed: {
         ...mapGetters ('journal', [ 'getEntriesByTerm' ]),
         entriesByTerm() {
-            return this.getEntriesByTerm( this.term )
+            return this.getEntriesByTerm( this.term ).slice(0, 3)
         }
     },
     data() {
@@ -99,11 +113,24 @@ export default {
 .bloqueFiltros {
   background-color: rgba(126, 127, 94);
   color: white;
-  
 }
 
 input{
     height: 25px;
+}
+
+.buscador {
+    width: 50%;
+}
+.entry-list-container{
+    border-right: px solid #2c3e50;
+    height: calc(100vh - 56px);
+}
+
+.entry-scrollarea{
+    color: #000;
+    width: auto;
+    height: auto;
 }
 
 </style>
