@@ -1,5 +1,5 @@
 {
-  "name": "repueblacylv2",
+  "name": "repueblacyl",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -20,6 +20,7 @@
     "vuex": "^4.0.2"
   },
   "devDependencies": {
+    "@types/mapbox-gl": "^2.7.0",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-unit-jest": "~5.0.0",
     "@vue/cli-service": "~5.0.0",

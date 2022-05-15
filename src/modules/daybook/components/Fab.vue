@@ -21,7 +21,7 @@ export default {
 <style lang='scss' scoped>
 button {
     border-radius: 100%;
-    bottom: 230px;
+    bottom: 50px;
     height: 70px;
     position: fixed;
     right: 30px;

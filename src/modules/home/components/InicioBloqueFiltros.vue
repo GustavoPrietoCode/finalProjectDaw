@@ -4,7 +4,7 @@
     <div class="container mb-5 d-flex justify-content-center">
       <h2>Ayuda a repoblar tu pueblo</h2>
     </div>
-
+  
     <!-- SELECT -->
 <!--     <div class="row align-items-center">
       <div class="col-3"></div>
@@ -27,7 +27,6 @@
 
     <!-- LISTA DE ENTRADAS -->
       <div class="entry-list-container">
-
         <!-- BUSCADOR -->
         <div class="container mb-5 buscador">
             <div class="px-2 pt-2">
@@ -44,16 +43,20 @@
 
         <!-- LISTA DE ENTRADAS -->
         <div class="container">
-            <div class="d-flex flex-row justify-content-center mx-5">
+            <div class="row">
+              <!-- <div class="d-flex justify-content-center"> -->
                     <EntryHome
-                    class="card entry-scrollarea mx-5"
+                    class="col card entry-scrollarea mx-5"
                     v-for="entry in entriesByTerm"
                     :key="entry.id"
                     :entry = "entry"
+                    @click="$router.push({ name:'entry', params: {id:entry.id}})"
                     />
+              <!-- </div> -->
             </div>
         </div>
-    </div>
+
+      </div>
 
   </div>
 
@@ -123,14 +126,15 @@ input{
     width: 50%;
 }
 .entry-list-container{
-    border-right: px solid #2c3e50;
-    height: calc(100vh - 56px);
+    /* height: calc(100vh - 56px); */
+    height: 80vh;
 }
 
 .entry-scrollarea{
     color: #000;
     width: auto;
-    height: auto;
+    max-width: 300px;
+    max-height: 400px;
 }
 
 </style>

@@ -5,4 +5,9 @@
 export default () => ({
     isLoading: true,
     userLocation: undefined,
+    places: [],
+    isLoadingPlaces: false,
+    
+    bibliobuses: [], //Ok. recibido array de api.
+
 })

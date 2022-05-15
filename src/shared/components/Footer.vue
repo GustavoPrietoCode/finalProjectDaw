@@ -30,10 +30,10 @@ export default {
 
 .footer{
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     background-color: #B49F6D;
     width: 100%;
-    height: 150px;
+    height: 130px;
 }
 
 </style>

@@ -15,12 +15,9 @@ export default {
   name: 'App',
   components: {
       NavBar: defineAsyncComponent(() => import(/* webpackChunkName: "Navbar" */'./shared/components/NavBar')),
-      
     },
     setup() {
-
       const { authStatus, checkAuthStatus } = useAuth()
-
       checkAuthStatus()
 
       return {

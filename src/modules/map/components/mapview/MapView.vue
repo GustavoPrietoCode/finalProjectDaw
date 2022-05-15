@@ -1,5 +1,15 @@
 <template>
 
+  <div class="container-fluid p-4 title">
+    <div class="row">
+      <div class="d-flex justify-content-center">
+        <h3>Filtra para saber qué hay cerca de tu pueblo (Solo hay ejemplos)</h3>
+      </div>
+    </div>
+  </div>
+
+  <nav id="filter-group" class="filter-group"></nav>
+
   <div v-if="!isUserLocationReady" 
         class="loading-map d-flex justify-content-center align-items-center">
         <div class="text-center">
@@ -17,35 +27,111 @@
 
 <script>
 import { usePlacesStore } from '../../composables/usePlacesStore';
+import { useMapStore } from '@/modules/map/composables/useMapStore';
 import {  onMounted, ref, watch } from "vue";
 import Mapboxgl from "mapbox-gl";
 
+import {places} from "@/assets/placesGeo";
+
 export default {
     name: 'MapView',
+
     setup() {
 
       const mapElement = ref();
       const { userLocation, isUserLocationReady } = usePlacesStore();
+      const { setMap } = useMapStore();
+      const urlPlaces = places;
 
       const initMap = async () => {
 
         if( !mapElement.value) throw new Error('Div Element no existe');
         if( !userLocation.value) throw new Error('userLocation no existe');
 
-
         await Promise.resolve();
 
+        //creando el mapa
         const map = new Mapboxgl.Map({
           container: mapElement.value, // container ID
-          style: 'mapbox://styles/mapbox/streets-v11', // style URL
+          style: 'mapbox://styles/mapbox/light-v10', // style URL
           center: userLocation.value, // starting position [lng, lat]
-          zoom: 9 // starting zoom
+          zoom: 7 // starting zoom
           });
 
+        //map.scrollZoom.disable();
 
+        //popup
+        const myLocationPopup = new Mapboxgl.Popup({ offset: [0,-45] })
+          .setLngLat(userLocation.value)
+          .setHTML(`
+              <p>Las coordenadas de tu ubicación: </p>
+              <p>${ userLocation.value }</p>
+          `);
+
+        //Localización usuario.
+        const myLocationMarker = new Mapboxgl.Marker()
+          .setLngLat(userLocation.value)
+          .setPopup(myLocationPopup)
+          .addTo(map);
+
+        // ***************************************************************************************
+
+        const filterGroup = document.getElementById('filter-group');
+
+        map.on('load', () => {
+            // Add a GeoJSON source containing place coordinates and information.
+            map.addSource('places', {
+            'type': 'geojson',
+            'data': urlPlaces
+            });
+        
+            for (const feature of places.features) {
+            const symbol = feature.properties.icon;
+            const titulo = feature.properties.label;
+            const layerID = `poi-${symbol}`;
+            
+            // Add a layer for this symbol type if it hasn't been added already.
+            if (!map.getLayer(layerID)) {
+
+                  map.addLayer({
+                  'id': layerID,
+                  'type': 'symbol',
+                  'source': 'places',
+                  'layout': {
+                    'icon-image':`${symbol}-15`,
+                    'icon-size':1.5,
+                    'icon-allow-overlap': true
+                  },
+                  'filter': ['==', 'icon', symbol]
+                });
+            
+                //Add checkbox and label elements for the layer.
+                const input = document.createElement('input');
+                input.type = 'checkbox';
+                input.id = layerID;
+                input.checked = true;
+                filterGroup.appendChild(input);
+                
+                //insert labels in html
+                const label = document.createElement('label');
+                label.setAttribute('for', layerID);
+                label.textContent = titulo;
+                filterGroup.appendChild(label);
+                
+                // When the checkbox changes, update the visibility of the layer.
+                input.addEventListener('change', (e) => {
+                    map.setLayoutProperty(layerID, 'visibility',
+                    e.target.checked ? 'visible' : 'none'
+                    );
+                });
+              }
+            }
+        });
+
+
+        setMap( map );
+ 
       }
-
-
 
       onMounted(() => {
         if( isUserLocationReady.value ) return initMap();
@@ -61,18 +147,23 @@ export default {
           userLocation,
           isUserLocationReady,
           mapElement,
+
         }
     }
 }
+
+
 </script>
 
 <style scoped>
-
+.title{
+  background-color: #B49F6D;
+}
 .map-container {
+
     height: 100vh;
     position: fixed;
     width: 100vw;
-    color: red;
 }
 
 .loading-map {

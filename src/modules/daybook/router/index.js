@@ -16,7 +16,8 @@ export default {
                     id: route.params.id //mandamos el dato como props
                 }
             }
-        }
+        },
+    
         
     ]
 }
