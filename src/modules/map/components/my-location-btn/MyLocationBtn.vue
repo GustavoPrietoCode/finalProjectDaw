@@ -38,9 +38,9 @@ export default ({
 <style scoped>
 
 button {
-    position: fixed;
-    bottom: 210px;
-    right: 30px; 
+    position: absolute;
+    bottom: 250px;
+    right: 50px; 
 }
 
 

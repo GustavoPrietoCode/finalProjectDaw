@@ -58,8 +58,8 @@ export default {
 
 <style scoped>
 .searchbar-container{
-    position: fixed;
-    top: 150px;
+    position: relative;
+    top:10px;
     left: 30px;
     background-color: white;
     z-index: 999;
@@ -71,7 +71,6 @@ export default {
 }
 
 .marker {
-
   background-size: cover;
   width: 50px;
   height: 50px;

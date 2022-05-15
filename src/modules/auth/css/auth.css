@@ -6,7 +6,7 @@
 [ FONT ]*/
 @import url('./fonts/Linearicons-Free-v1.0.0/icon-font.min.css');
 
-@font-face {
+/* @font-face {
     font-family: Ubuntu-Regular;
     src: url('./fonts/ubuntu/Ubuntu-Regular.ttf'); 
   }
@@ -14,7 +14,7 @@
   @font-face {
     font-family: Ubuntu-Bold;
     src: url('./fonts/ubuntu/Ubuntu-Bold.ttf'); 
-  }
+  } */
   
   
   
@@ -30,12 +30,13 @@
   
   body, html {
       height: 100%;
-      font-family: Ubuntu-Regular, sans-serif;
+      font-family: Montserrat, Helvetica, Arial, sans-serif;
+
   }
   
   /*---------------------------------------------*/
   a {
-      font-family: Ubuntu-Regular;
+      font-family: Montserrat, Helvetica, Arial, sans-serif;
       font-size: 14px;
       line-height: 1.7;
       color: #666666;
@@ -61,7 +62,7 @@
   }
   
   p {
-      font-family: Ubuntu-Regular;
+      font-family: Montserrat, Helvetica, Arial, sans-serif;
       font-size: 14px;
       line-height: 1.7;
       color: #666666;
@@ -133,7 +134,7 @@
   /*//////////////////////////////////////////////////////////////////
   [ Utility ]*/
   .txt1 {
-    font-family: Poppins-Regular;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
     font-size: 13px;
     color: #e5e5e5;
     line-height: 1.5;
@@ -217,7 +218,7 @@
   }
   
   .login100-form-title {
-    font-family: Ubuntu-Bold;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
     font-size: 28px;
     color: #fff;
     line-height: 1.2;
@@ -239,7 +240,7 @@
   }
   
   .input100 {
-    font-family: Ubuntu-Regular;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
     font-size: 20px;
     color: #555555;
     line-height: 1.2;
@@ -347,7 +348,7 @@
   }
   
   .login100-form-btn {
-    font-family: Ubuntu-Bold;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
     font-size: 18px;
     color: #fff;
     line-height: 1.2;
@@ -432,7 +433,7 @@
     right: 10px;
     pointer-events: none;
   
-    font-family: Ubuntu-Bold;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
     color: #c80000;
     font-size: 13px;
     line-height: 1.4;

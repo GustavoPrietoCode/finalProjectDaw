@@ -21,21 +21,29 @@
     <div v-show="isUserLocationReady"
         class="map-container"
         ref="mapElement"
-    />
-
+    >
+    <SearchBar />
+    </div>
+    <MyLocationBtn />
+  
 </template>
 
 <script>
 import { usePlacesStore } from '../../composables/usePlacesStore';
 import { useMapStore } from '@/modules/map/composables/useMapStore';
-import {  onMounted, ref, watch } from "vue";
+import { onMounted, ref, watch } from "vue";
 import Mapboxgl from "mapbox-gl";
 
+import MyLocationBtn from "@/modules/map/components/my-location-btn/MyLocationBtn.vue";
+import SearchBar from "@/modules/map/components/searchbar/SearchBar.vue";
 import {places} from "@/assets/placesGeo";
 
 export default {
     name: 'MapView',
-
+    components: {
+      MyLocationBtn,
+      SearchBar,
+    },
     setup() {
 
       const mapElement = ref();
@@ -160,10 +168,8 @@ export default {
   background-color: #B49F6D;
 }
 .map-container {
-
-    height: 100vh;
-    position: fixed;
-    width: 100vw;
+    height: 80vh;
+    width: 100%;
 }
 
 .loading-map {

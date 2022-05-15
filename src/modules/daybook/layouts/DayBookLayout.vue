@@ -25,8 +25,6 @@
 
 </template>
 
-
-
 <script>
 import { defineAsyncComponent } from "vue";
 import { mapActions, mapState } from "vuex"
@@ -47,9 +45,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-
-
-
-</style>
