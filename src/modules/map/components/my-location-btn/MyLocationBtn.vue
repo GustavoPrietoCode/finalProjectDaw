@@ -39,7 +39,7 @@ export default ({
 
 button {
     position: absolute;
-    bottom: 250px;
+    bottom: 100px;
     right: 50px; 
 }
 

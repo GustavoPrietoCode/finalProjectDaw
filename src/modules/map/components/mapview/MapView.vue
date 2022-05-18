@@ -36,7 +36,7 @@ import Mapboxgl from "mapbox-gl";
 
 import MyLocationBtn from "@/modules/map/components/my-location-btn/MyLocationBtn.vue";
 import SearchBar from "@/modules/map/components/searchbar/SearchBar.vue";
-import {places} from "@/assets/placesGeo";
+import { places } from "@/assets/placesGeo";
 
 export default {
     name: 'MapView',
@@ -49,7 +49,7 @@ export default {
       const mapElement = ref();
       const { userLocation, isUserLocationReady } = usePlacesStore();
       const { setMap } = useMapStore();
-      const urlPlaces = places;
+
 
       const initMap = async () => {
 
@@ -61,7 +61,7 @@ export default {
         //creando el mapa
         const map = new Mapboxgl.Map({
           container: mapElement.value, // container ID
-          style: 'mapbox://styles/mapbox/light-v10', // style URL
+          style: 'mapbox://styles/mapbox/streets-v10', // style URL
           center: userLocation.value, // starting position [lng, lat]
           zoom: 7 // starting zoom
           });
@@ -90,7 +90,7 @@ export default {
             // Add a GeoJSON source containing place coordinates and information.
             map.addSource('places', {
             'type': 'geojson',
-            'data': urlPlaces
+            'data': places
             });
         
             for (const feature of places.features) {

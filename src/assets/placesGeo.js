@@ -4,19 +4,19 @@ export const places = {
       {
         'type': 'Feature',
         'properties': {
-          'label': 'Teatro',
-          'icon': 'theatre'
+          'label': 'Aeropuerto',
+          'icon': 'airport'
         },
         'geometry': {
             'type': 'Point',
-            'coordinates': [-5.10666579811, 42.2979034286]
+            'coordinates': [-4.8472577, 41.7060184]
         }
       },
       {
         'type': 'Feature',
         'properties': {
-          'label': 'Teatro',
-          'icon': 'theatre'
+          'label': 'Biblioteca',
+          'icon': 'library'
           },
         'geometry': {
             'type': 'Point',
@@ -120,11 +120,11 @@ export const places = {
         },
       },
       {
-        'type': "Feature",
+        'type': "Feature", //cigales
         'geometry': { 'type': "Point", 'coordinates': [-4.6970657, 41.7558329] },
         'properties': {
-            'label': 'Bicis',
-            'icon': 'bicycle'
+          'label': 'Restaurante',
+          'icon': 'restaurant'
         },
       },
       {
@@ -200,8 +200,8 @@ export const places = {
           'coordinates': [-4.66245174407959, 41.43140151372244],
         },
         'properties': {
-            'label': 'Bicis',
-            'icon': 'bicycle'
+          'label': 'Biblioteca',
+          'icon': 'library'
         },
       },
       {
@@ -211,8 +211,8 @@ export const places = {
           'coordinates': [-4.718284606933594, 41.637063539200525],
         },
         'properties': {
-            'label': 'Bicis',
-            'icon': 'bicycle'
+          'label': 'Biblioteca',
+          'icon': 'library'
         },
       },
       {
@@ -222,16 +222,16 @@ export const places = {
           'coordinates': [-5.263309478759766, 42.1674113938766],
         },
         'properties': {
-            'label': 'Bicis',
-            'icon': 'bicycle'
+          'label': 'Biblioteca',
+          'icon': 'library'
         },
       },
       {
         'type': "Feature",
         'geometry': { 'type': "Point", 'coordinates': [-4.747279, 41.631278] },
         'properties': {
-            'label': 'Bicis',
-            'icon': 'bicycle'
+          'label': 'Biblioteca',
+          'icon': 'library'
         },
       },
       {
@@ -241,8 +241,8 @@ export const places = {
           'coordinates': [-4.733948707580566, 41.644367881811526],
         },
         'properties': {
-            'label': 'Bicis',
-            'icon': 'bicycle'
+          'label': 'Biblioteca',
+          'icon': 'library'
         },
       },
       {
@@ -252,8 +252,8 @@ export const places = {
           'coordinates': [-4.699487686157227, 41.54067463434672],
         },
         'properties': {
-            'label': 'Bicis',
-            'icon': 'bicycle'
+          'label': 'Biblioteca',
+          'icon': 'library'
         },
       },
       {
@@ -263,8 +263,8 @@ export const places = {
           'coordinates': [-4.533963203430176, 41.36215465974967],
         },
         'properties': {
-            'label': 'Bicis',
-            'icon': 'bicycle'
+          'label': 'Biblioteca',
+          'icon': 'library'
         },
       },
     ]
