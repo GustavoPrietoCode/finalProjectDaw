@@ -36,7 +36,7 @@ import Mapboxgl from "mapbox-gl";
 
 import MyLocationBtn from "@/modules/map/components/my-location-btn/MyLocationBtn.vue";
 import SearchBar from "@/modules/map/components/searchbar/SearchBar.vue";
-import { places } from "@/assets/placesGeo";
+import { places } from "@/api/placesGeo";
 
 export default {
     name: 'MapView',

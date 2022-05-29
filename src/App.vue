@@ -1,7 +1,7 @@
 <template>
   <NavBar />
 
-  <h1 v-if="authStatus === 'authenticating'">{{ authStatus }}</h1>
+  <p v-if="authStatus === 'authenticating'">{{ authStatus }}</p>
   <router-view v-else/>
 
 </template>

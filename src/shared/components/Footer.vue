@@ -4,7 +4,7 @@
       <div class="row p-4">
         <div class="m-3 p-2 col d-flex flex-column align-items-center">
           <p>Proyecto fin de curso 2022</p>
-          <p>IES Galileo (Valladolid)</p>
+          <a href="http://http://iesgalileo.centros.educa.jcyl.es/sitio/index.cgi" target="_blank" rel="noopener noreferrer">IES Galileo (Valladolid)</a>
         </div>
         <div class="m-3 p-2 col d-flex justify-content-center">
             <h6>Realizado en Vuejs </h6>
@@ -14,7 +14,7 @@
                 class="d-inline-block align-text-top mx-2">
         </div>
         <div class="contacto m-3 p-2 col d-flex flex-column align-items-center">
-          <p>Gustavo Prieto</p>
+          <p>Autor: Gustavo Prieto</p>
           <a href="mailto:gustavopg@alumnos.iesgalileo.es">Contacta por email</a>
         </div>
       </div>
@@ -41,7 +41,7 @@ export default {
     height: 180px;
 }
 
-.contacto a {
+a {
   text-decoration: none;
   color: black;
 

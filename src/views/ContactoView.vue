@@ -54,6 +54,20 @@
       </div>
     </div>
 
+    <!-- proyecto La Exclusiva-->
+    <div class="row filas mx-4 mb-4">
+      <div class="fila col-12 col-sm-3 d-flex justify-content-center align-items-center">
+        <a href="https://www.laexclusiva.org/" target="_blank">
+          <img class="m-2" src="@/assets/logo_la_exclusiva.png" alt="La Exclusiva">
+        </a>
+      </div>
+      <div class="col-12 col-sm-9 d-flex flex-column text-start my-3">
+        <h2>La Exclusiva</h2>
+        <p>La Exclusiva es un emprendimiento social que busca reducir la despoblación
+            en la provincia de Soria cubriendo las necesidades básicas de sus habitantes.</p>
+      </div>
+    </div>
+
     <!-- proyecto vente a vivir a un pueblo-->
     <div class="row filas mx-4 mb-4">
       <div class="fila col-12 col-sm-3 d-flex justify-content-center align-items-center">
@@ -70,6 +84,71 @@
           reducirse enormemente los gastos que se tienen en una ciudad. Con toda la información que encontrarás 
           en www.venteaviviraunpueblo.com ya es más fácil tomar la decisión de irse a vivir a un pueblo para aquellos 
           que quieran teletrabajar, emprender o coger el traspaso de un negocio, por ejemplo.</p>
+      </div>
+    </div>
+
+    <!-- Empleo Rural-->
+    <div class="row filas mx-4 mb-4">
+      <div class="fila col-12 col-sm-3 d-flex justify-content-center align-items-center">
+        <a href="https://empleorural.es" target="_blank">
+          <img class="m-2" src="@/assets/empleoRural.png" alt="Empleo Rural">
+        </a>
+      </div>
+      <div class="col-12 col-sm-9 d-flex flex-column text-start my-3">
+        <h2>Empleo rural</h2>
+        <p>Once grupos de acción local trabajan para impulsar el desarrollo sostenible del medio rural, 
+          mediante la innovación tecnológica, el apoyo al tejido empresarial y la generación de empleo,
+          en el marco de la medida 19.3 (leader) del programa de desarrollo rural de Castilla y León.</p>
+      </div>
+    </div>
+
+    <!-- Cuatro Valles-->
+    <div class="row filas mx-4 mb-4">
+      <div class="fila col-12 col-sm-3 d-flex justify-content-center align-items-center">
+        <a href="https://www.cuatrovalles.es/" target="_blank">
+          <img class="m-2" src="@/assets/cuatroValles.jpg" alt="Cuatro Valles">
+        </a>
+      </div>
+      <div class="col-12 col-sm-9 d-flex flex-column text-start my-3">
+        <h2>Cuatro Valles</h2>
+        <p>La Asociación Cuatro Valles, constituida en marzo de 1994, es una entidad sin ánimo de lucro, 
+          integrada por distintos operadores públicos y privados. Pretende promover un desarrollo rural, 
+          integrado y sostenible y servir de núcleo de unión y representación en las comarcas de su ámbito de actuación. </p>
+      </div>
+    </div>
+
+    <!-- POEDA-->
+    <div class="row filas mx-4 mb-4">
+      <div class="fila col-12 col-sm-3 d-flex justify-content-center align-items-center">
+        <a href="http://poeda.eu/" target="_blank">
+          <img class="m-2" src="@/assets/poeda.png" alt="Poeda">
+        </a>
+      </div>
+      <div class="col-12 col-sm-9 d-flex flex-column text-start my-3">
+        <h2>Poeda (Páramo Órbigo Esla)</h2>
+        <p>Son las siglas que se corresponden con Páramo, Órbigo, Esla y Desarrollo Asociado. 
+          Este nombre es muy aclaratorio respecto dónde se ubica y qué municipios incluye, este Grupo de Acción Local.
+          <br>
+          En esta extensa zona (2.035 km2), en la provincia de León, se dan cita una gran variedad de ambientes: 
+          paisajes, tradiciones, culturas, aprovechamientos económicos y un sinfín de peculiaridades que llaman 
+          la atención del visitante.</p>
+      </div>
+    </div>
+    
+    <!-- Tierra de campos-->
+    <div class="row filas mx-4 mb-4">
+      <div class="fila col-12 col-sm-3 d-flex justify-content-center align-items-center">
+        <a href="https://www.somostierradecampos.com/" target="_blank">
+          <img class="m-2" src="@/assets/tierraCampos.jpg" alt="Tierra de Campos">
+        </a>
+      </div>
+      <div class="col-12 col-sm-9 d-flex flex-column text-start my-3">
+        <h2>Somos Tierra de Campos</h2>
+        <p>El Colectivo para el Desarrollo Rural de Tierra de Campos es una asociación sin ánimo de lucro de ámbito autonómico 
+          y con delegaciones en todas las provincias de Castilla y León. Se constituye formalmente el 26 de junio de 1991 
+          y es declarada de utilidad pública en 2002.<br>
+          Nuestra misión es desarrollar proyectos para mantener vivos los pueblos de Castilla y León y mejorar la 
+          calidad de vida de sus habitantes.</p>
       </div>
     </div>
 
